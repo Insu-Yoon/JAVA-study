@@ -11,6 +11,7 @@ if(condition){
   else{statement2;}
 ```
 (condition)에서 boolean의 리터럴이 true면 statement1을, false면 statement2를 실행한다.   
+   
 예시코드
 ```java
 public String fizzBuzz(int num) {
@@ -26,7 +27,7 @@ public String fizzBuzz(int num) {
       result = "No FizzBuzz";
     }
     return result;
-	}
+}
 ```
 3의 배수면 Fizz, 5의 배수면 Buzz, 3과 5의 공배수면 FizzBizz, 3과 5에 대해 서로소면 No FizzBuzz를 반환하는 if
 ***
@@ -48,5 +49,21 @@ switch(expression){
     default_statement;
     break;
   }
-  ```
-  (expression)의 값에 따라 case를 나누고, 그에 따른 statement를 지정한다. 모든 case에 해당하지 않을 시 default_statement를 실행한다.
+```
+  (expression)의 값에 따라 case를 나누고, 그에 따른 statement를 지정한다. 모든 case에 해당하지 않을 시 default_statement를 실행한다.   
+     
+  예시 코드
+```java
+public int daysInMonth(int month) {
+    // TODO:
+    switch(month){
+      case 2 : return 28;
+      case 4:
+      case 6:
+      case 9:
+      case 11: return 30;
+      default: return 31;
+    }
+}
+```
+1~12월의 마지막 날이 각각 몇 일인 지, 해당 날짜를 반환하는 switch문. case 4, case 6, case 9, case 11은 동일한 반환 값을 가지기 때문에 따로 statement를 지정하지 않고 위처럼 표현할 수 있는데, 이를 fall-through라고 한다.

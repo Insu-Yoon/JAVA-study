@@ -11,7 +11,24 @@ if(condition){
   else{statement2;}
 ```
 (condition)에서 boolean의 리터럴이 true면 statement1을, false면 statement2를 실행한다.
-
+예시코드
+```java
+public String fizzBuzz(int num) {
+    String result;
+    if(num%3==0){
+      result = "Fizz";
+      if(num%5==0){
+        result = "FizzBuzz";
+      }
+    }else if(num%5==0){
+      result = "Buzz";
+    }else{
+      result = "No FizzBuzz";
+    }
+    return result;
+	}
+```
+3의 배수면 Fizz, 5의 배수면 Buzz, 3과 5의 공배수면 FizzBizz, 3과 5에 대해 서로소면 No FizzBuzz를 반환하는 if
 ***
 
 ## switch문의 형태

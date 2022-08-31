@@ -10,7 +10,7 @@ if(condition){
   }
   else{statement2;}
 ```
-(condition)에서 boolean의 리터럴이 true면 statement1을, false면 statement2를 실행한다.
+(condition)에서 boolean의 리터럴이 true면 statement1을, false면 statement2를 실행한다.   
 예시코드
 ```java
 public String fizzBuzz(int num) {

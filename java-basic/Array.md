@@ -48,7 +48,7 @@ int[] arr2 = Arrays.copyOfRange(arr1, 2, 4);
 int[] arr1 = new int[]{0, 1, 2, 3, 4, 5, 6};
 int[] arr2 = new int[10];
 System.arraycopy(arr1, 2, arr2, 4, 3);
-//arr2 = {0, 0, 0, 0, 2, 3, 4, 0, 0, 0};
+//arr2 = {0, 0, 0, 0, 2, 3, 4, 0, 0, 0}
 ```
 * str.split(regex) : regex로 받은 문자열 패턴을 기준으로 문자열을 나눈다.
 ```java

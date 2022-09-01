@@ -43,8 +43,8 @@ int[] arr2 = Arrays.copyOfRange(arr1, 2, 4);
 //arr2 = {2, 3}
 ```
 주의) 마지막 인자로 들어가는 index까지 복사하는 것이 아니라 해당 index이전까지만 복사한다.   
-* System.arraycopy(arr1, index1, arr2, index2, length) : 각 array의 지정된 index부터 length만큼 복사한다.
-```
+* System.arraycopy(arr1, index1, arr2, index2, length) : 각 array의 지정된 index부터 length만큼 복사한다.   
+```java
 int[] arr1 = new int[]{0, 1, 2, 3, 4, 5, 6};
 int[] arr2 = new int[10];
 System.arraycopy(arr1, 2, arr2, 4, 3);

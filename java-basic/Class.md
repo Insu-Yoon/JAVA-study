@@ -40,3 +40,19 @@ class TypeOfVariable {
 * 스태틱 변수는 TypeOfVariable 클래스로 생성된 모든 인스턴스에 있어 값을 공유한다.          
 스태틱 변수는 인스턴스를 생성하지 않고도 "클래스명.변수명" 을 통해 사용가능하다.
 * 지역 변수는 메서드 내부에서만 사용가능하다.
+## Method Overloading
+```java
+class Shape {
+    public void area(int r) {
+        System.out.println("원의 넓이 = " + (3.14 * r * r));
+    }
+    public void area(int a, int b) {
+        System.out.println("직사각형의 넓이 = " + (a * b));
+    }
+    public void area(double a, double b) {
+        System.out.println("삼각형의 넓이 = " + (a* b /2));
+    }
+}
+```
+위와 같이 클래스 내에서 이름은 같고 매개변수의 갯수나 type이 다른 여러개의 메서드를 정의하는 것을 Method Overloading이라고 한다.   
+같은 이름의 메서드로 여러가지 타입의 매개변수에 대응할 수 있으며 결정적으로 메서드의 이름을 고민할 수고가 줄어든다(...)

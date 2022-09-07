@@ -7,10 +7,26 @@
 각 접근제어자를 설명하기에 앞서 패키지(Package)에 대한 개념이 필요한데, 패키지는 특정한 목적을 공유하는 인터페이스와 클래스의 묶음을 지칭한다.   
 패키지는 클래스들을 그룹 단위로 묶어 효과적으로 관리한다는 목적을 가지고있다.   
 java에서의 패키지는 하나의 물리적인 디렉토리이며 Import 패키지명.* 을 통해 다른 패키지를 불러오고, 해당 패키지의 클래스를 사용할 수 있다.   
-
 |---|클래스 내|패키지 내|다른 패키지의 <br> 하위클래스|패키지 외|
 |:---:|:---:|:---:|:---:|:---:|
 |public|O|O|O|O|
 |protected|O|O|O|<span style="color:red">X</span>|
 |default|O|O|<span style="color:red">X</span>|<span style="color:red">X</span>|
 |private|O|<span style="color:red">X</span>|<span style="color:red">X</span>|<span style="color:red">X</span>|
+***
+### getter, setter : getName(), setAge()등의 형태로 사용되며, 접근 권한이 없는 상태에서도 해당 데이터에 접근할 수 있게 해준다.
+```java
+class Worker {
+    private String name; // 변수의 은닉. 외부로부터 접근 불가
+
+    public String getName() { // name을 값을 출력
+        return name;
+    }
+
+    public void setName(String name) { // name의 값 변경
+        this.name = name;
+    }
+}
+```
+예시 코드의 name은 접근제어자로 private이 붙어있어 해당 클래스 내에서만 접근이 가능하다.   
+하지만 다른 클래스에서 getName() 메서드를 실행함으로써 name의 값을 출력받을 수 있다.

@@ -58,7 +58,7 @@ public class Example {
         car.go();
         bike.go();
         (Car)car.goBack(); // Vehicle형 참조변수이므로 error
-        ((Car) car).goBack();
+        ((Car) car).goBack();// 다운캐스팅은 타입을 명시해줘야 가능
     }
 }
 class Vehicle{
@@ -99,4 +99,6 @@ class Test {
     }
 }
 ```
-이것이 다형성의 장점을 보여주는 예시이며, 다형성이 OOP를 형성하는 기둥 중 하나인 이유일 것이다.
+이것이 다형성의 장점을 보여주는 예시이며, 다형성이 OOP를 형성하는 기둥 중 하나인 이유일 것이다.   
+참고) Vehicle car = new Car(); 와 같이 명시적으로 업캐스팅을 하지 않아도 Test.test(car);를 입력하면 자동으로 업캐스팅된다.   
+앞에서 상술했고, 코드에도 나타나듯 다운 캐스팅은 변환할 참조변수 타입을 명시해줘야 한다.

@@ -65,7 +65,7 @@ Generic<Boolean> tf = new Generic<>(true);
 ```
 primitive변수형을 타입 매개변수로 사용할 경우, 위와 같이 래퍼 클래스(Wrapper class)를 사용하여야 한다.
 ***
-Generic은 Class형 변수를 할당할 때 그 쓰임새가 더 직관적으로 보인다.
+Generic Class를 사용할 때도 다형성을 적용할 수 있다.
 ```java
 class Vehicle { ... }
 class Car extends Vehicle { ... }
@@ -86,3 +86,16 @@ public static void main(String[] args) {
 		carGeneric.setItem(new Car());    // 다형성적용
 //		carGeneric.setItem(new Bike());   // 에러
 }
+```
+**제한된 제네릭 클래스** : <T extends Vehicle> Vehicle의 하위클래스만 타입으로 지정하도록 제한할 수 있다.   
+***
+### 제네릭 메서드 : 클래스 내부의 특정 메서드만 제네릭으로 선언할 수 있다.
+**제너릭 메서드의 타입 매개변수는 제네릭 클래스의 타입 매개변수와 별개의 것**
+```java
+class Basket {
+		...
+	public <T> void add(T element) {
+		...
+	}
+}
+```

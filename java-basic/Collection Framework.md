@@ -132,4 +132,4 @@ TreeSet은 이진 탐색 트리 구조로 데이터를 저장하며, 기본적�
 |  | Object | remove(Object key) | 주어진 키와 일치하는 Map.Entry를 삭제하고 값을 반환 |
     
  ### HashMap
- HashSet과 HashMap의 차이를 명확하게 알게되면 
+ HashSet과 HashMap의 차이를 명확하게 알게되면 재정리 

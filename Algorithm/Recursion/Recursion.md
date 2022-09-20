@@ -35,7 +35,7 @@ public class recursive {
 
 arrSum() 메서드를 보면 반환값으로 arr\[0\]이라는 정수 하나와 arrSum(tail)을 갖는다.   
 반환값으로 메서드를 갖는다는 것은 해당 메서드를 호출하여, tail이라는 매개 변수를 입력한 결과를 반환하라는 것이다.  
-따라서 arrSum() 메서드는 다음과 같이 표현할 수 있다.
+따라서 arrSum() 메서드는 다음과 같이 표현할 수 있다.  
 
 ```java
 public static int arrSum(int[] arr) {

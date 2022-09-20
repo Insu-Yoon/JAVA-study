@@ -1,9 +1,4 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class recursiveFactorial {
-    int[] a =new int[]{1,2,3,4};
-    int t = a.length;
     public static void main(String[] args) {
         System.out.println("5! = " + Factorial(5));
     }

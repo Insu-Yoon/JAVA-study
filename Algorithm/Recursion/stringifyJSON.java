@@ -15,7 +15,10 @@ public class stringifyJSON {
       return String.valueOf(data);
     }
     //배열 일 때
-    //여기서 고생한 이유 : head tail에 너무 집착함. 
+    //여기서 고생한 이유
+    //1.head tail에 너무 집착함. 
+    //2.for문을 돌린다는 생각 자체를 안함(재귀가 반복문을 대체하기 위해 쓰인다는 고정관념)
+    //배운점? 기억할 부분 : 학습 내용 정리하면서도 썼지만 '메서드 내에서 자기 자신을 호출'하면 재귀. 그게 for문 안에서 쓰여도 당연히 무방하다..
     //시도해 본 코드
 //  if(data instanceof Object[]){
 //    Object[] obj = (Object[]) data;

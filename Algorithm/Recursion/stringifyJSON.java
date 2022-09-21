@@ -15,6 +15,18 @@ public class stringifyJSON {
       return String.valueOf(data);
     }
     //배열 일 때
+    //여기서 고생한 이유 : head tail에 너무 집착함. 
+    //시도해 본 코드
+//  if(data instanceof Object[]){
+//    Object[] obj = (Object[]) data;
+//    Object[]tail={};
+//    String head="";
+//    if (obj.length == 0) return "[]";
+//    if (obj.length == 1) return "["+stringify(obj[0])+"]";
+//    head = stringify(obj[0]);
+//    tail = Arrays.copyOfRange(obj, 1, obj.length);
+//    return head+","+stringify(tail);
+//    생각난 모든 방법을 동원해봤지만 모든 test case를 만족시킬 순 없었다..
     if(data instanceof Object[]){
       //obj 에 data 할당
       Object[] obj = (Object[]) data;

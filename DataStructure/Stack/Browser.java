@@ -7,6 +7,7 @@ public class Browser {
     public static void main(String[] args) {
 
     }
+
     public ArrayList<Stack> browserStack(String[] actions, String start) {
         Stack<String> prevStack = new Stack<>();
         Stack<String> nextStack = new Stack<>();

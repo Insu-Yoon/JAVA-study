@@ -7,6 +7,7 @@ public class QuePrinter {
     public static void main(String[] args) {
 
     }
+
     public int queuePrinter(int bufferSize, int capacities, int[] documents) {
         // TODO: bufferSize-칸 /capacities - 모든 칸 용량/ documents - 각 문서의 용량을 담은 배열
         // 1초 -> 첫 문서 추가 ->2초 다음 문서 들어올수있나 판단 후 첫 문서 이동, 다음문서 추가 -> ...

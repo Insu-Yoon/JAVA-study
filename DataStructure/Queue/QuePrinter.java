@@ -16,19 +16,18 @@ public class QuePrinter {
         Queue<Integer> quewaiting = new LinkedList<>(); //대기중인 큐
         for (int i = 0; i < bufferSize; i++) queprinter.add(0); //버퍼 0으로 꽉
         for (int i = 0; i < documents.length; i++) quewaiting.add(documents[i]); // 문서 목록
-        int time = 0;
-        int cap = 0;
-        int temp = 0;
+        int time = 0; //한 사이클당 time++
+        int cap = 0;  //printer queue의 현재 용량 - quewating에서 queprinter로 데이터 넘길 때 용량 판단용
         while (!queprinter.isEmpty() || !quewaiting.isEmpty()) {
-            time++;
-            cap -= queprinter.poll();
-            if (quewaiting.isEmpty()) continue;
-            if (cap + (quewaiting.peek()) <= capacities) {
-                cap += quewaiting.peek();
-                queprinter.add(quewaiting.poll());
-            } else {
-                queprinter.add(0);
-            }
+            time++; //사이클 시작하면서 time++
+            cap -= queprinter.poll(); // head poll
+            if (quewaiting.isEmpty()) continue; // 대기목록이 비었으면 위의 동작만 반복
+            if (cap + (quewaiting.peek()) <= capacities) {//최대 용량보다 작거나 같으면
+                cap += quewaiting.peek();                 //peek으로 용량 파악해서 cap에 더해주고
+                queprinter.add(quewaiting.poll());        //poll해서 queprinter에 add
+            } else {                                      //최대 용량을 초과하면
+                queprinter.add(0);                        //queprinter에 0을 add
+            }                                             //(queprinter에 입력할 시 bufferSize만큼 대기해야 하기 때문에, 빈공간으로 두지않는다)
         }
         return time;
     }

@@ -88,4 +88,5 @@ queue.poll();
 //이제 queue는 빈 상태
 queue.poll(); // null을 반환
 queue.remove(); // NoSuchElementException 발생
+
 ```

@@ -40,9 +40,9 @@ java에서 Stack 클래스는 Vector의 하위클래스이며, Vector는 List를
 |---------| --- | --- |
 | boolean | add(T t) | 데이터를 Queue에 추가하고, 성공 여부를 반환한다. |
 | boolean | offer(T t) | 데이터를 Queue에 추가하고, 성공 여부를 반환한다. |
-| < T >   | peek | Queue의 선두 요소를 반환하며, Queue에 변화를 주지 않는다. |
-| < T >   | poll | Queue의 선두 요소를 반환하며, Queue에서 해당 요소를 제거한다.  |
-| < T >   | remove | Queue의 선두 요소를 반환하며, Queue에서 해당 요소를 제거한다. |
+| < T >   | peek() | Queue의 선두 요소를 반환하며, Queue에 변화를 주지 않는다. |
+| < T >   | poll() | Queue의 선두 요소를 반환하며, Queue에서 해당 요소를 제거한다.  |
+| < T >   | remove() | Queue의 선두 요소를 반환하며, Queue에서 해당 요소를 제거한다. |
 
 add와 offer 그리고 poll과 remove은 같은 동작을 하지만, 차이점이 존재한다.
 

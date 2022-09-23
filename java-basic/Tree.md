@@ -1,6 +1,7 @@
-## **Tree**
+# **Tree**
 
-[##_Image|kage@cpGVQ4/btrMUSHoKDb/NcJ1yLmvxKDfYU7R3uavG0/img.png|CDM|1.3|{"originWidth":453,"originHeight":349,"style":"alignCenter","caption":"트리 구조"}_##]
+![image](https://user-images.githubusercontent.com/110891599/191973157-378567ca-7029-49a5-bf6c-35bc944e4b9d.png)
+
 
 **컴퓨터의 디렉토리 구조, 조직도 등이 Tree구조를 갖는 대표적 예시라고 할 수 있다.**
 
@@ -10,7 +11,7 @@
 -   데이터가 바로 아래에 있는 하나 이상의 데이터에 무방향으로 연결된 계층적 구조이다.
 -   데이터가 하나 이상의 데이터에 연결되므로, 데이터를 순차식으로 나열시킨 구조와 다르게 비선형 구조를 가진다.
 
-### **용어 정리**
+## **용어 정리**
 
 -   루트(Root) : 트리의 시작점이 되는 노드
 -   노드(Node) : 트리 구조를 이루는 모든 데이터
@@ -25,7 +26,7 @@
 
 > **Tree 구조의 예시를 통해 용어를 사용하며 정리 !**
 
-[##_Image|kage@cpGVQ4/btrMUSHoKDb/NcJ1yLmvxKDfYU7R3uavG0/img.png|CDM|1.3|{"originWidth":453,"originHeight":349,"style":"alignCenter","caption":"트리 구조"}_##]
+![image](https://user-images.githubusercontent.com/110891599/191973157-378567ca-7029-49a5-bf6c-35bc944e4b9d.png)
 
 -   A는 root이며, B와 C의 부모노드이고 depth는 0, height는 2이다.
 -   B는 A의 자식 노드이자 D와 E의 부모노드이고, depth와 height가 1이다. 

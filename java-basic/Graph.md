@@ -1,6 +1,6 @@
 ## **Graph**
 
-[##_Image|kage@mFsBy/btrMVdqS57G/xgLGjPmzsDCeKHHZFC2xqk/img.png|CDM|1.3|{"originWidth":424,"originHeight":284,"style":"alignCenter","caption":"그래프의 예시"}_##]
+![image](https://user-images.githubusercontent.com/110891599/191973262-fb4f34eb-3eb3-491b-9163-31df01a352c3.png)
 
 **포털 사이트의 검색 엔진, SNS에서 팔로우 등의 관계, 네비게이션의 길찾기 등에 Graph구조를 활용할 수 있다.**
 
@@ -21,7 +21,7 @@
 
 > **간단한 그래프 예시를 통해 용어를 사용하며 정리 !**
 
-[##_Image|kage@mFsBy/btrMVdqS57G/xgLGjPmzsDCeKHHZFC2xqk/img.png|CDM|1.3|{"originWidth":424,"originHeight":284,"style":"alignCenter","caption":"그래프의 구조를 다시 가져와 살펴보자"}_##]
+![image](https://user-images.githubusercontent.com/110891599/191973262-fb4f34eb-3eb3-491b-9163-31df01a352c3.png)
 
 -   위 그림에서 A, B, C, D는 각각 하나의 정점이며, 서로가 간선으로 이어져있다.
 -   A는 B에 인접하며, B는 A로부터 인접하다.

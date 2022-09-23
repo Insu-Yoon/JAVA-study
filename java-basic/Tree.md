@@ -1,0 +1,34 @@
+## **Tree**
+
+[##_Image|kage@cpGVQ4/btrMUSHoKDb/NcJ1yLmvxKDfYU7R3uavG0/img.png|CDM|1.3|{"originWidth":453,"originHeight":349,"style":"alignCenter","caption":"트리 구조"}_##]
+
+**컴퓨터의 디렉토리 구조, 조직도 등이 Tree구조를 갖는 대표적 예시라고 할 수 있다.**
+
+-   트리는 단방향 그래프의 한 구조이다.
+-   트리는 나무를 거꾸로 뒤집어놓은 듯한 구조를 갖는다.
+-   하나의 노드(root)에서 출발해 아래로 점점 뻗어나가며, 상하 계층을 가진다.
+-   데이터가 바로 아래에 있는 하나 이상의 데이터에 무방향으로 연결된 계층적 구조이다.
+-   데이터가 하나 이상의 데이터에 연결되므로, 데이터를 순차식으로 나열시킨 구조와 다르게 비선형 구조를 가진다.
+
+### **용어 정리**
+
+-   루트(Root) : 트리의 시작점이 되는 노드
+-   노드(Node) : 트리 구조를 이루는 모든 데이터
+-   부모 노드(Parent node) : 상하 관계로 연결된 노드 중, root에 가까운 노드
+-   자식 노드(Child node) : 상하 관계로 연결된 노드 중, root에서 먼 노드
+-   리프(Leaf) : 트리 구조의 끝 지점. 당연히 자식 노드가 없다.
+-   깊이(Depth) : 루트로부터의 거리
+-   높이(Height) : 리프로부터의 거리
+-   레벨(Level) : 같은 깊이(또는 높이)에 있는 노드들을 묶어서 level이라고 표현한다.
+-   형제 노드(Sibling node) : 같은 레벨에 나란히 있는 노드
+-   서브 트리(Sub Tree) : 전체 트리의 내부에 있는, 트리 구조를 갖는 작은 트리
+
+> **Tree 구조의 예시를 통해 용어를 사용하며 정리 !**
+
+[##_Image|kage@cpGVQ4/btrMUSHoKDb/NcJ1yLmvxKDfYU7R3uavG0/img.png|CDM|1.3|{"originWidth":453,"originHeight":349,"style":"alignCenter","caption":"트리 구조"}_##]
+
+-   A는 root이며, B와 C의 부모노드이고 depth는 0, height는 2이다.
+-   B는 A의 자식 노드이자 D와 E의 부모노드이고, depth와 height가 1이다. 
+-   D, E, F, G는 leaf 노드이다.
+-   B, D, E 는 하나의 서브 트리 구조를 갖는다.
+-   B, C는 같은 level이며 서로 형제 노드의 관계다.

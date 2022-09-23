@@ -35,7 +35,7 @@
 
 그래프의 관계를 이차원 배열로 나타낸다. 인접 행렬에서 adjacent\[ i \]\[ j \] 은 i 에서 j로 가는 간선이 있는지 여부를 요소로 갖는다.
 
-```
+```java
 adjacent[i][j] = 1 => i에서 j로 가는 간선이 있다. 
        A B C D
 [A] = [0,1,1,0] //A는 B,C에 인접한다.
@@ -52,7 +52,7 @@ adjacent[i][j] = 1 => i에서 j로 가는 간선이 있다.
 
 그래프의 관계를 리스트로 나타낸다. 인접 리스트를 adjacent 라고 한다면, adjacent\[ A \] 는 정점 A에 연결된 정점들을 요소로 갖는다.
 
-```
+```java
 adjacent[A] = [B, C] //A는 B,C에 인접한다.
 adjacent[B] = [C, D] //B는 C,D에 인접한다.
 adjacent[C] = [A] //C는 A에 인접한다.

@@ -222,7 +222,7 @@ AOP가 다루게 될 공통 관심 사항은 부가적 관심 사항이라고 �
 
 PSA는 '일관된 서비스 추상화'로 해석할 수 있다. 추상화는 Java 학습 중 상속, 캡슐화, 다형성과 함께 학습했다. 그럼 일관된 서비스 추상화가 무엇을 의미하는지만 알면 될 것이다.
 
-```
+```java
 // DbClient.java
 public class DbClient {
     public static void main(String[] args) {

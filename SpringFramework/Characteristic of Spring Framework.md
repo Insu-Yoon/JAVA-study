@@ -188,3 +188,98 @@ MenuController는 생성자로 MenuService 인터페이스를 주입받는다. �
 -   객체간의 느슨한 결합은 요구 사항의 변경에 유연하게 대처할 수 있도록 해준다.
 -   의존성 주입은 클래스간의 강한 결합을 느슨한 결합으로 만들어준다.
 -   Spring에서는 애플리케이션 코드에서 이루어지는 의존성 주입을 Spring이 대신 해준다.(꿀)
+
+## **AOP(Aspect Oriented Programming)**
+
+관점 지향 프로그래밍, 혹은 관심 지향 프로그래밍 정도로 해석할 수 있다. 애플리케이션 개발 시 각각의 세부적인 부분에 관계없이 전반에 걸쳐 공통적으로 사용되는 기능들이 있기 마련인데, 이러한 공통 기능에 대한 사항이 AOP가 다룰 대상이다.
+
+### **공통 관심 사항과 핵심 관심 사항**
+
+단도직입적으로, 핵심 관심 사항은 흔히들 말하는 비즈니스 로직, 즉 애플리케이션의 주 목적을 달성하기 위한 핵심 로직에 대한 관심사를 일컫는다.
+
+AOP가 다루게 될 공통 관심 사항은 부가적 관심 사항이라고 표현하기도 하는데, 일반적인 공통 관심 사항은 아래와 같다.
+
+-   로그를 남기는 기능
+-   보안에 관련된 기능
+-   트랜잭션과 관련된 기능
+
+해당 기능들은 특정 기능에만 적용되는 것이 아니라, 애플리케이션 전반에 걸쳐 사용될 것이다. 하지만 이 기능들을 각각의 세부적인 코드들에 모두 집어넣는다면, 코드가 지저분할 뿐 아니라 기능을 수정하거나 유지, 보수 시 굉장히 귀찮아질 것이다. 결론적으로 '객체 지향 설계 원칙에 맞지 않은 코드'가 되어버린다는 것이다.
+
+그렇다면 핵심 로직에서 공통 기능을 분리하는 AOP를 통해 아래와 같은 장점을 가질 수 있을 것이다.
+
+-   코드의 간결성 유지, 코드의 재사용 가능
+-   위의 항목으로 인한 유지 및 보수의 수월함
+-   객체 지향 설계 원칙에 맞는 코드 구현 가능
+
+## **AOP 핵심 요약**
+
+-   AOP의 Aspect는 애플리케이션의 공통 관심사를 의미한다.
+-   애플리케이션의 공통 관심사란, 비즈니스 로직을 제외한 앱 전반에 걸쳐서 사용되는 공통 기능들을 의미한다.
+-   공통 기능에는 로깅, 보안, 트랜잭션, 모니터링, 트레이싱 등이 있다.
+-   AOP를 통해 코드의 간결성, 코드의 재사용, 객체 지향 설계 원칙에 맞는 코드 구현등의 이득을 얻을 수 있다.
+
+## **PSA(Portable Service Abstraction)**
+
+PSA는 '일관된 서비스 추상화'로 해석할 수 있다. 추상화는 Java 학습 중 상속, 캡슐화, 다형성과 함께 학습했다. 그럼 일관된 서비스 추상화가 무엇을 의미하는지만 알면 될 것이다.
+
+```
+// DbClient.java
+public class DbClient {
+    public static void main(String[] args) {
+        // Spring DI로 대체 가능
+        JdbcConnector connector = new MariaDBJdbcConnector(); // (1)
+
+        // Spring DI로 대체 가능
+        DataProcessor processor = new DataProcessor(connector); // (2)
+        processor.insert();
+    }
+}
+
+// DataProcessor.java
+public class DataProcessor {
+    private Connection connection;
+
+    public DataProcessor(JdbcConnector connector) {
+        this.connection = connector.getConnection();
+    }
+
+    public void insert() {
+        // 실제로는 connection 객체를 이용해서 데이터를 insert 할 수 있다.
+        System.out.println("inserted data");
+    }
+}
+
+// JdbcConnector.java
+public interface JdbcConnector {
+    Connection getConnection();
+}
+
+// MariaDBJdbcConnector.java
+public class MariaDBJdbcConnector implements JdbcConnector {
+    @Override
+    public Connection getConnection() {
+        return null;
+    }
+}
+
+// OracleJdbcConnector.java
+public class OracleJdbcConnector implements JdbcConnector {
+    @Override
+    public Connection getConnection() {
+        return null;
+    }
+}
+```
+
+위 코드에서는 MariaDBJdbcConnector 구현체의 객체를 생성해 JdbcConnector 인터페이스 타입의 참조변수에 할당하고있다. 그 후 실제로 데이터를 데이터베이스에 저장하는 기능을 하는 DataProcessor 클래스의 생성자로 JdbcConnector 객체를 전달하여 의존성을 주입하고 있다.
+
+만약, MariaDB가 아니라 Oracle을 사용하고 싶다면, (1)에서 JdbcConnector 타입의 참조변수 connector에 OracleJdbcConnector 의 객체를 생성하여 할당하면 될 것이다.
+
+이 코드에서 DbClient는 실제로 데이터를 처리하는 주체가 MariaDB인지, Oracle인지에 관계없이 JdbcConnector만 가져오고있다. 이렇게 추상화된 상위 클래스를 일관되게 바라보며 하위 클래스의 기능을 사용하는 것이 "일관된 서비스 추상화(PSA)"의 기본 개념이다.
+
+## **PSA 핵심 요약**
+
+-   java의 객체지향 개념에서 학습했듯이, 추상화는 어떤 클래스의 본질적인 특성만을 추출하여 일반화하는 것을 의미한다.
+-   클라이언트가 추상화된 상위 클래스를 일관되게 바라보며 하위 클래스의 기능을 사용하는 것이 PSA이다.
+-   애플리케이션에서 특정 서비스를 이용할 때, 서비스의 기능에 접근하는 방식을 일관되게 유지함으로써 기술은 유연하게 사용할 수 있도록 하는 것이 PSA의 지향점이다.
+-   PSA가 필요한 주된 이유는 결국 유지보수를 위함이다. 사용되는 기술이 변경되더라도 코드는 최소한의 변경만을 통해 요구 사항을 달성할 수 있다.

@@ -7,7 +7,8 @@
 
 > **API 계층과 서비스 계층을 연동한다는 말은, API계층에서 구현한 Controller 클래스가 서비스 계층의 Service 클래스와 메서드 호출을 통해 상호작용 한다는 것을 의미한다.**
 
-[##_Image|kage@b8WxNo/btrPrmmUX4I/kAig3QBNYoDArdlcPMcRrK/img.png|CDM|1.3|{"originWidth":152,"originHeight":110,"style":"alignCenter","caption":"기존 member 패키지"}_##]
+![image](https://user-images.githubusercontent.com/110891599/197567503-f78ed592-7fb5-4caf-975c-c5256bacb618.png)
+
 
 현재 패키지에는 클라이언트의 요청을 받아오는 과정에 필요한 DTO 클래스와, DTO 객체로 서비스 로직을 실행하는 Controller가 존재한다.
 
@@ -184,3 +185,18 @@ public MemberController(MemberService memberService, MemberMapper memberMapper) 
 -   계층별 관심사의 분리
     -   기능에 대한 관심사가 다르다.
     -   하나의 클래스나 메서드 내에서 여러 개의 기능을 구현하는 것은 객체 지향 설계 관점에서 리팩토링 대상이다.
+-   코드 구성의 단순화
+    -   DTO 클래스에서 사용하는 유효성 검사 애너테이션이 Entity 클래스에서 사용된다면, JPA에서 사용하는 애너테이션과 뒤섞인 상태가 된다.
+    -   이는 유지보수 관점에서 좋지 않은 설계이다.
+-   REST API 스펙의 독립성 확보
+    -   데이터 액세스 계층에서 전달 받은 데이터로 채워진 Entity 클래스를 그대로 응답으로 전달한다면, 원치 않는 데이터까지 전송될 수 있다. (ex. 유저의 패스워드 등)
+    -   DTO 클래스를 사용하면 원하지 않는 데이터는 노출하지 않으면서, 원하는 데이터만 제공할 수 있다.
+
+> **핵심 요약  
+> \- 애플리케이션에 있어 Service는 도메인 업무 영역을 구현하는 비즈니스 로직을 처리하는 것을 의미  
+> \- Controller 클래스는 @RestController 애너테이션을 사용해 Spring Bean으로 등록하고,  HTTP Response Body에 데이터를 담아 객체를 반환하도록 할 수 있다. (@Controller처럼 View에 Model을 담는 것 까지는 동일하다.  
+> \- @Service 애너테이션은 @Component와 동일한 기능을 가지며, 해당 컴포넌트의 역할에 따라 부여한 것이다.  
+>   (@Repository, @Controller 등도 같은 것으로 알고 있다.)  
+> \- 생성자를 통한 DI의 경우 @Autowired를 생략할 수 있다. 용도에 따라 생성자가 여러 개일 경우 @Autowired 애너테이션을 사용해야 하지만, 그런 경우는 상당히 드물다.  
+> \- Mapper 인터페이스를 통해 DTO 클래스와 Entity 클래스의 관심사를 분리할 수 있다.  
+> \- Mapper는 개발자가 직접 구현할 수도 있지만, MapStruct 등의 라이브러리를 활용하는 것이 일반적이다.**

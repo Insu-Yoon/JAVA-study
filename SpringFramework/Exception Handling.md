@@ -6,7 +6,8 @@
 
 먼저 @ExceptionHandler 애너테이션을 이용한 예외 처리에 대해 살펴보자.
 
-[##_Image|kage@bp0tCz/btrPzj3fLaf/EbABJ8GjSOqUy4VdZDsUMK/img.png|CDM|1.3|{"originWidth":334,"originHeight":83,"style":"alignCenter","width":450,"height":112,"caption":"잘못된 요청에 대한 응답. 무엇이 잘못 되었는지 알 수 없다."}_##]
+![image](https://user-images.githubusercontent.com/110891599/197778576-3cdfa1b4-371d-4a64-884d-3b45924392d9.png)
+
 
 예외에 대한 별도의 동작을 설정하지 않을 경우 위의 사진과 같이 단순히 '잘못된 요청'이라는 응답만 클라이언트에 돌려준다. 요청 데이터가 왜 유효성 검증을 통과하지 못했는 지 알 수 없는 것이다.
 

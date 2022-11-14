@@ -46,7 +46,7 @@ API 계층에서 Controller는 클라이언트에서 보낸 HTTP request URI를 
 
 # **build.gradle 설정**
 
-```
+```java
 //.adoc 파일 확장자를 가지는 AsciiDoc 문서를 생성해주는 Asciidoctor
 //Asciidoctor 를 사용하기 위한 플러그인 추가
 plugins {

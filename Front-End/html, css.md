@@ -49,7 +49,7 @@ span 태그는 display : inline 이라는 스타일 속성 내포
 따라서 폭, 높이 수정하려면 부모 태그에서 설정
 
 ---
-```html
+```css
 #special { font-size : 30px } /*아이디*/
 .profile { font-size : 20px }  /*클래스*/
 p { font-size : 16px } /*태그*/

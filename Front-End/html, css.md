@@ -32,12 +32,13 @@ Opening-tag + Content + Closing-tag
 이 전체가 하나의 Element   
 
 ```html 
-<p class="editor-note"> Attribute
+<p class="editor-note"> 
 ```
-여러 태그들을 묶어서 관리할 수 있음                 
-  attribute 중 boolean 타입인 것들은 따로 지정안해도 적용
+**Attribute**
+- 여러 태그들을 묶어서 관리할 수 있음                 
+- attribute 중 boolean 타입인 것들은 따로 값을 지정하지 않아도 선언만 하면 적용
 
-
+> 여러 태그들
 - p, div, span
 - ol, ul
 - input, type

@@ -50,7 +50,7 @@ span 태그는 display : inline 이라는 스타일 속성 내포
 
 ---
 # CSS
->> html에 스타일까지 다 넣으면 코드가 더럽기 때문에 스타일을 따로 관리하기 위해 css 사용
+> html에 스타일까지 다 넣으면 코드가 더럽기 때문에 스타일을 따로 관리하기 위해 css 사용
 ```css
 #special { font-size : 30px } /*아이디*/
 .profile { font-size : 20px }  /*클래스*/

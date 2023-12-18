@@ -24,7 +24,7 @@
 
 **Inline**
 - 공간이 허용하면 다른 태그 옆에 배치가능
-
+---
 ```html 
 <p> Example Massage </p>
 ```   

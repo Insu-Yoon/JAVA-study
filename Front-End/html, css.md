@@ -200,6 +200,9 @@ inline-block 속성은 이렇게 두 태그 사이에 공백 넣으면 "공백�
         <input type="submit">
         <button type="submit">전송</button>
         <!-- input을 제출/전송하기 위한 버튼 -->
+
+	<input type="checkbox" id="subscribe">
+	<label for="subscribe">여길 눌러도 체크가 됩니다.</label>
     </form>
 ```
 - 재사용 가능한 클래스 만들어 활용하는 것이 편함

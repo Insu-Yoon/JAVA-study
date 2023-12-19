@@ -64,13 +64,6 @@ body {
   width: 100%;
   height: 30px;
 }
-input[type="text"] {
-  width: 100%;
-}
-input[type="checkbox"] {
-  width: min-content;
-  margin-top: 10px;
-}
 
 .input-box p {
   margin-bottom: 5px;

@@ -210,3 +210,56 @@ inline-block 속성은 이렇게 두 태그 사이에 공백 넣으면 "공백�
 - 셀렉터에 콤마(,) 써서 여러개 나열하면 동시에 속성 지정 가능
 
 - <label> 태그를 활용해보자 - ex) checkbox에 label로 붙이면 해당 라벨을 눌러도 체크가 됨
+
+---
+
+`<table>` 태그 : 표만들기  
+행 만들땐 `<tr>`
+열 만들땐 `<td>`
+순서는 항상 `<tr><td/><td/></tr>`  
+제목용 세로 열 만들땐 `<th>`  
+`<thead>` : 제목 행이라는 걸 강조  
+
+/* vertical-align : top/middle/bottom 상하정렬 */
+/* -> inline / inline-block 요소간 세로 정렬할 때 사용가능 */
+/* border-collapse: collapse : 테이블의 각 셀 간에 간격이 없어짐 */
+
+
+.cart-table td:nth-child(n) {
+  color: red;
+} 
+여러 요소를 찾은 다음 원하는 n번째 요소만 스타일 변경
+> n 자리에 even(짝수번째만 변경), 3n+0(3의배수마다 변경) 등으로도 활용가능
+
+<td rowspan="2"></td>
+rowspan 행 병합
+
+<td colspan="4"></td>
+colspan 열 병합
+
+
+table 태그에 border-radius가 안먹을 때 1. 
+
+table {
+  border-collapse : collapse;
+  border-spacing : 0;
+}
+
+(왼쪽위에있는 td) {
+  border-top-left-radius : 5px;
+}
+ 
+
+ 
+
+table 태그에 border-radius가 안먹을 때 2. 
+
+table {
+  border-collapse : collapse;
+  border-radius : 7px;
+  border-style : hidden;
+  box-shadow : 0 0 0 1px #666;
+}
+box-shadow라는 속성을 이용해 테두리를 가짜로 만들어내는 편법입니다.
+
+box-shadow는 그림자 넣는 속성입니다. 

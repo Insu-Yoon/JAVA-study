@@ -83,4 +83,90 @@ inline-block 속성은 이렇게 두 태그 사이에 공백 넣으면 "공백�
 - \<!---->(주석처리 문자)넣고 중간에 개행해서 해결
 -> 둘다 좀 별로임
 
-한문장으로 정리 : inline-block은 자기 크기만큼 자리를 차지하며, 공백 제거가 필요하고, 주변에 글이 있으면 이상해질 수 있다.
+### 한문장으로 정리 : inline-block은 자기 크기만큼 자리를 차지하며, 공백 제거가 필요하고, 주변에 글이 있으면 이상해질 수 있다.
+
+> float로 떠있는 요소 아래에 배치된 요소의 경우, margin-top을 먹여도 제대로 안먹음   
+> 위의 요소가 떠있고, margin을 적용해도 떠있는 요소 아래의 빈공간에 마진이 들어가기 때문   
+> clear:both를 쓰고 마진을 빈공간만큼 더 늘려서 적용해도 되지만, 두 요소 사이에 의미없는 div를 배치하는 것도 하나의 방법
+---
+
+
+
+```css
+.navbar li{ ~ }
+
+.navbar>li{ ~ }
+```
+## selector 문법 중 공백 또는 >
+### a 안에 있는 b (위의 경우 navbar 안에 있는 li를 셀렉)
+- \> : 직계 자식에만 적용
+- 공백 : 모든 자식(저 li 안에 다른 li가 있을 경우, 해당 li도 셀렉)
+
+***
+
+
+## 이미지를 배경으로 설정하고 각종 속성을 설정하는 css 코드
+```css
+    background-image: url(../img/shoes.jpg);
+    background-size: cover; 
+    /*100% || cover || contain; cover : 빈영역 꽉채워 contain : 이미지 안짤리게*/
+    background-repeat: no-repeat;
+    /*배경 크기에 따라 이미지가 반복되는 현상 제거*/
+    background-position: center;
+    /* background-attachment: scroll; */
+    filter: sepia();
+    /* 필터는 글자에도 필터 입혀짐 */
+```
+---
+
+## margin-collapse 현상
+### 두 박스의 위쪽 테두리가 겹칠 경우 margin이 합쳐짐
+- 둘 중 하나에만 margin을 줘도 둘 모두에게 margin이 생김
+- 상위 태그에 padding 을 넣는 등 둘의 테두리가 겹치지 않게 조정
+> 윗 박스의 아래 테두리, 아랫 박스의 윗 테두리가 겹쳐도 마찬가지로 비슷한 문제가 발생함
+- 윗 박스의 bottom 마진 50px, 아래 박스의 top 마진 30px을 설정할 경우, 80px만큼 간격이 생길 것 같지만 실제로는 둘 중 더 큰 50px의 마진만 생김
+
+
+## position
+### position 속성을 통해 요소들의 위치를 설정가능
+```css
+    position: absolute;
+    /* position : 이동 가능, float 쓴 것 처럼 공중에 뜸*/
+    /* static : 기준이 따로 없음. 이동 불가 */
+    /* relative : 내 원래 위치를 기준으로 이동 */
+    /* fixed : 화면의 특정 위치에 고정 */
+    /* absolute : 내 부모태그 중  position : relative를 가진 부모를 기준으로 포지셔닝 */
+```
+### 특정 요소를 가운데 정렬하기 위해선 아래처럼 최소 5가지의 속성 부여
+```css
+.button {
+  position : absolute; 
+  left : 0;
+  right : 0; 
+  margin: auto;
+  width : 적절히
+}
+/* 가운데 정렬을 위한 속성들 */
+```
+### position / float 등의 속성으로 '떠 있는 요소'들이 많다면?
+> 어떤 요소가 앞으로 나올지에 대한 속성을 부여할 필요성 존재
+- z-index
+    - z-index가 높을수록 상위 레이어(앞으로 나옴)
+
+### 박스의 크기를 #%로 하고싶지만, 화면이 크면(pc화면 등) 박스가 너무 커진다 !
+- max-width 속성으로 최대 크기 설정가능
+- 비슷한 맥락에서, min-width도 설정 가능
+
+### max-width를 설정했는데, padding을 줬더니 최대 크기를 넘어간다 !
+- max-width는 박스 전체가 아니라, 내부의 content의 영역의 최대값을 의미
+- 박스 사이즈를 정확히 하고싶다면 content 부분만 width로 설정하지말고, padding, border 포함해서 크기 설정하기 가능
+    - box-sizing: border-box; 이걸 활용하면 '실제로 보이는 영역'의 크기로 조정가능
+    - box-sizing: content-box; 이게 default라고 생각
+> css 파일에 div { box-sizing: border-box;} 해놓으면 편하겠다.   
+> 비슷한 맥락에서 body{margin : 0px} 도 해놓으면 좋을듯
+
+
+### 브라우저 호환성 : 브라우저마다 디자인이 다르게 보일 수 있다
+- 호환성 이슈해결책부터 첨부하는 경우가 있다
+- 검색 keywords : normalize.css
+- https://github.com/necolas/normalize.css/blob/master/normalize.css 

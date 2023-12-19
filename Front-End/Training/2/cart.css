@@ -1,0 +1,50 @@
+div {
+  box-sizing: border-box;
+}
+.big-box {
+  margin: 0;
+  padding: 0;
+  max-width: 700px;
+}
+.cart-table {
+  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  max-width: 700px;
+  color: rgb(177, 204, 214);
+  padding: 5px;
+  border-collapse: collapse;
+}
+.background-box {
+  background-color: rgb(177, 204, 214);
+  padding: 20px;
+  color: rgb(18, 55, 96);
+}
+td,
+th {
+  padding: 15px;
+  border-bottom: 1px solid;
+}
+
+.img {
+  height: 50px;
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
+}
+
+.brand {
+  color: black;
+  /* margin: 0;
+    padding: 0; */
+  font-weight: 800;
+  text-align: left;
+}
+.product {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}

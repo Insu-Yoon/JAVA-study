@@ -171,4 +171,34 @@ inline-block 속성은 이렇게 두 태그 사이에 공백 넣으면 "공백�
 ### 브라우저 호환성 : 브라우저마다 디자인이 다르게 보일 수 있다
 - 호환성 이슈해결책부터 첨부하는 경우가 있다
 - 검색 keywords : normalize.css
-- https://github.com/necolas/normalize.css/blob/master/normalize.css 
+- https://github.com/necolas/normalize.css/blob/master/normalize.css
+
+---
+
+## Input & Form
+### 사용자로부터 입력을 받아올 수 있다
+```html
+   <form action="">
+        <input type="text" value="username">
+        <!-- default값을 넣어두기 위해 value사용 -->
+        <input type="password" placeholder="password">
+        <!-- placeholder로 해당 영역의 용도 표시 가능 -->
+        <input type="email" name="email">
+        <!-- 서버로 보낼 때 'email:입력값' 형태로 전송하기위해 name 사용가능 -->
+        <input type="date">
+        <!-- 날짜입력 -->
+        <input type="checkbox">
+        <select>
+            <option>aaa</option>
+            <option>bbb</option>
+            <option>ccc</option>
+        </select>
+        <!-- select-option으로 선택지 선택 가능 -->
+        <textarea cols="30" rows="10"></textarea>
+        <!-- 긴 텍스트를 입력받기 위한 textarea -->
+        <!-- rows, cols는 default로 보여줄 크기 -->
+        <input type="submit">
+        <button type="submit">전송</button>
+        <!-- input을 제출/전송하기 위한 버튼 -->
+    </form>
+```

@@ -38,3 +38,29 @@
 - flex-grow : 빈 공간이 있을 때, 자식 요소의 크기가 얼마나 늘어나서 공간을 차지할 것인지 비율 정하는 속성
 - flex-shrink : 요소의 크기가 줄어야할 때 얼마나 줄어들 것인지 정하는 속성(0으로 두면 아이템의 크기가 flex-basis 보다 작아지지 않음)
 - flex-basis : 위 속성들에 영향받기 전에 요소들이 가지는 기본크기
+
+
+
+---
+코드 예시
+```html
+<div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+</div>
+```
+```css
+.flex-container{
+    display: flex;
+    width: 700px;.
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items:
+}
+.flex-item{
+    width: 20%;
+    height: 100px;    
+}
+```

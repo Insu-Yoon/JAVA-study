@@ -3,7 +3,6 @@
 `display : flex`
 
 > Flexbox는 항상 부모 요소에 속성을 지정하여 자식 요소들을 움직이게 함
-> 
 > Main axis와 Cross axis는 항상 고정된 건 아님
 
 ## 부모 요소에 적용해야할 Flexbox 속성

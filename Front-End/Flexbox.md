@@ -57,7 +57,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: column;
-    align-items:
+    align-items: center;
 }
 .flex-item{
     width: 20%;

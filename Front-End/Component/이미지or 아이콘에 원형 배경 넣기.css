@@ -1,0 +1,14 @@
+.test-item i{
+  margin-top: 10px;
+  /* 상단에 여백 추가 - 필요할때만 */
+  background-color: burlywood;
+  width: 75px;
+  height: 75px;
+  /* 원하는 크기만큼 지정 */
+  border-radius: 100px;
+  /* 대충 크게주면 원 */
+  padding-top: 22px;
+  /* 이미지나 아이콘의 위치 맞춰주고 */
+  box-sizing: border-box;
+  /* 패딩 들어가서 박스 전체 크기가 늘어났으므로, box-sizing을 border 기준 75px이 되게해서 다시 원으로 만듦 */
+}

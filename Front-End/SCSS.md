@@ -57,3 +57,43 @@ custom-p{
 }
 ```
 이렇게 해야 `.navbar:hover{...}`로 적용됨. & 안붙이면 `.navbar :hover{}` 이렇게 스페이스바 하나 들어간걸로 적용됨
+
+### 3. @extend 문법
+중복적인 스타일을 하나로 따로 빼두고, `@extend` 활용해서 코드 재활용 가능
+```scss
+%btn{ 기본 스타일 }
+.btn-green{
+  @extend %btn;
+  background-color : green;
+}
+```
+
+### 4. @mixin, @include 문법
+`@extend`랑 비슷한 개념이긴 한데, 이건 변수를 할당해서 활용가능
+```scss
+@mixin font-style($size, $space){
+  font-size:$size;
+  letter-space:$space;
+}
+
+.custom-p{
+  @include font-style(20px, -1px);
+}
+```
+
+### 5. 다른 파일에 있는 내용을 가져오고 싶다면?
+```scss
+/*다른 scss 파일( reset.scss )*/
+body{
+  margin:0;
+} 
+div{
+  box-sizing:border-box;
+}
+
+/* 스타일링 할 scss 파일 */
+@use 'reset';
+```
+다른 scss 파일에서 설정한 특정 스타일링을 가져오고 싶으면 위처럼 `@use '파일명'` 으로 사용가능   
+해당 파일에서 `$main-color:blue;` 이런식으로 변수에 값을 넣어뒀다면, 그것도 끌어다가 쓸 수 있음   
+끌어오는 방법은 `reset.$main-color` 이렇게.

@@ -74,3 +74,63 @@ js는 배열에서 특정 요소 삭제하려면 해당 요소가 없는 새로�
 function의 결과 true를 리턴하면 새로운 배열에 포함, false면 제외
 
 geolocation.getCurrentPosition()은 조회 성공시 콜백함수에 geoLocationPosition 을 넘겨줌
+
+
+문자열.includes('검사할문자열') -> out : boolean
+
+정규식
+/a/.test('abcde') = 'abcde' 안에 a가 있는가? (true)
+/[a-z]/  범위
+^a : a로 시작
+a$ : a로 끝
+a|b : a or b
+
+스크롤 이벤트 리스너
+window.addEventListener('scroll', function);
+scrollY() - 현재 스크롤한 위치
+scrollTo(x,y) - 스크롤 할 위치
+scrollBy(x,y) - 한번에 이만큼 스크롤
+
+scrollTop = div에 적용가능한 scrollY (스크롤 내린 양)
+clientHeight : 눈에 보이는 div 높이
+scrollHeight : 스크롤 가능한 실제 높이
+
+$('.asdf').eq(0) : 셀렉된애들중 첫번째(jq 형태의 return) -> 뒤에 jquery 함수 호출할때 사용
+$('.asdf').slice(0,4) : 셀렉된 애들중 0~3번 인덱스만
+
+$('.class')[0] -> jquery로 뽑은걸 document.querySelector('.class')로 뽑은 형태로 바꿀때
+$('.class').eq(0)
+$(event.target).is($('.class'))
+
+document.querySelector('.black-bg')
+결과 <div class=​"black-bg">​…​</div>​
+$('.black-bg')
+결과 jQuery.fn.init {0: div.black-bg, length: 1, prevObject: j…y.fn.init}
+$('.black-bg')[0]
+결과 <div class=​"black-bg">​…​</div>​
+$('.black-bg').eq(0)
+결과 jQuery.fn.init {0: div.black-bg, length: 1, prevObject: j…y.fn.init}
+
+
+
+js 라이브러리
+- swiper : 캐러셀(이미지 슬라이드) 라이브러리
+  - https://swiperjs.com/get-started#use-swiper-from-cdn 여기 튜토리얼대로
+- chart.js : 차트 그려줌
+  - https://cdnjs.com/libraries/Chart.js 이런데서 js 받거나 cdn 버전으로 구해서 html에 삽입. https://www.chartjs.org/docs/latest/ 홈페이지 예제코드 아무데나 붙여넣어도 나옴
+- AOS(Animation on scroll) : 스크롤 내리면 element가 서서히 등장하거나 하는 애니메이션 넣기 가능
+  - https://github.com/michalsnik/aos 에서 css, js cdn 찾아서 html에 넣고 script에 AOS.init(); 넣으면 끝
+- EmailJS : 서버 빌려서 js만으로 메일 전송 가능(내 이메일로 다른데 보내거나, 다른 이메일로 내 이메일에 보내기 ㄱㄴ)
+  - https://www.emailjs.com/docs/introduction/how-does-emailjs-work/ 여기가서 가입, 로그인, 튜토리얼
+- Lodash : array, object, 문자, 숫자 자료를 다루기 편해지는 기본함수들을 제공
+  - https://lodash.com/
+- Fullpage.js : 웹 페이지를 ppt 처럼 만들어줌
+  - https://github.com/alvarotrigo/fullPage.js/tree/master/lang/korean#fullpagejs 여기서 css, js 받거나 cdn식으로 받으면되고 예시 html, css 참고
+
+
+eventListener로 동작할 때 function 내부에서 this 는 event.target이랑 같음
+근데 function말고 arrow function( ()=> ) 으로 쓰면 외부의 this값을 가져옴
+용도에 맞게사용
+
+ajax : 새로고침 없이 GET POST 가능
+$.ajaxSetup({ async: false }); 를 선언해두면 ajax관련 요청을 보낼때 synchronous방식으로 사용가능. 요청이 완료된 후 나머지 코드 실행

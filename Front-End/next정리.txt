@@ -1,0 +1,85 @@
+next.js
+<<<  1   >>>jsx 문법
+1. html 구성
+return(
+  <div>
+    한개의 div만 리턴 가능
+    이 안에 다 넣어서 html 구성
+  </div>
+ )
+
+2. className
+요소에 클래스 지정할 때 class 대신 className
+
+3. html 안에 variable
+let 변수명 = value;
+{ 변수명 } 을 통해 변수활용
+텍스트뿐 아니라 className, id, href 이런곳에도 사용 가능
+
+4. style 넣을땐 object 자료형으로 삽입
+<div style = {{color :'red', fontSize:'20px'}}
+font-size 이런 spine 형식은 안됨. 카멜케이스로 작성
+
+
+<<< 2 >>> 라우팅
+next.js에서 라우팅은 폴더로 적용
+app 하위에 a라는 폴더를 만들고 page.js -> root주소/a 에 대한 페이지가 됨
+a 폴더 하위에 b라는 폴더를 만들면 root주소/a/b 라우팅
+
+- navbar 같이 중복되는 요소?
+-> layout.js 파일에 배치하면 시블링 + 차일드 페이지 전체에 적용
+-> layout.js 가 루트에도 있고 a에도 있으면? - a페이지를 a폴더안의 layout.js가 먼저 감싸고, root의 layout.js가 그 외부에 적용
+
+<<< 3 >>> map
+jsx에서 div 안쪽에는 for문, if문 같은거 사용 불가능
+-> map으로 반복문 사용 (*forEach랑 사용법은 거의 동일한 듯)
+let arr = [1, 2, 3]
+arr.map((data) => {
+  console.log(data) // 1, 2, 3 차례로 출력
+});
+
+let newArr = arr.map((data) => {
+  return data*2
+});
+이런식으로 작성하면 newArr에 [2, 4, 6] 이렇게 담김
+
+따라서 html 요소들도 위와같이 생성 가능
+let charArr = ['a', 'b', 'c,']
+charArr.map((data)=> {
+  <div>
+    <p> { data } </p>
+  </div>
+});
+이러면 각각 a, b, c 가 들어간 div-p 3개 생성
+
+
+<<< 4 >>> Image
+(*쓸 이미지파일을 public에 넣으면 컴파일하면서 root 경로로 보냄)
+import Image from 'next/image'
+import 이미지1 from '/public/image1.png'
+이런식으로 import 해오고, 본문에서는
+<이미지1/> 이렇게 사용
+
+<<<<<<<<< Server component, Client component
+server component - 일반적인 모든 페이지
+- html에 js 기능 넣기 불가능
+- useState, useEffect 이런거 사용불가
+- 로딩속도 빠름
+- 검색엔진 노출 유리
+
+client component - 해당 페이지 최상단에 'use client'
+- html에 js 기능 넣기 가능
+- useState, useEffect 이런거 사용가능
+- 로딩속도 느림(js 많이 필요하니까)
+- 로딩속도 느림2(hydration 필요) (*hydration : html을 유저에게 보낸 후에 자바스크립트로 html 다시 읽고 분석하는 거
+
+--> 큰 페이지는 server conponent로 만들고, 기능이 필요한 부분은 client component로 만들자
+
+<<<<< useState - 'use client' // client component에서만 사용가능
+let [변수, 변수통제] = useState(초기값)
+변수통제(변경할 값); 으로 변수 변경
+변수(state)에 변경점이 생길 시 해당 html 요소를 다시 랜더링함 = 따로 기존 element 지우고 새로 작성할 필요가 없음
+
+<<<< js에도 reference type은 존재하고, 깊은 복사/ 얕은 복사 구분해서 써야됨
+- array의 경우 [...arr] 하면 깊은복사
+- object는 {...obj} 
